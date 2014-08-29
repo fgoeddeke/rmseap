@@ -16,16 +16,8 @@ rmsea <- function(n, dfstr, dfmeas, chistr, chimeas){
   xupper <- k1 * (upper ^ (1/h)) - b
   llower <- xlower - (dfstr - dfmeas)
   lupper <- xupper - (dfstr - dfmeas)
-  rmseapl <<- sqrt(llower/((dfstr-dfmeas)*n-1))
-  rmseapu <<- sqrt(lupper/((dfstr-dfmeas)*n-1))
-  #return(rmseap)
-  #return(rmseapl)
-  #return(rmseapu)
-}
-
-#rmsea(793, 280, 209, 729.29, 582.25)
-#rmseap
-#rmseapl
-#rmseapu
+  rmseapl <<- sqrt(llower/((dfstr-dfmeas)*(n-1)))
+  rmseapu <<- sqrt(lupper/((dfstr-dfmeas)*(n-1)))
+ }
 
 
