@@ -1,0 +1,17 @@
+<h4>RMSEA-P Calculator</h4>
+
+<p>RMSEA-P is a measure of model fit in structural equations modeling that isolates the fit of the latent variables from the fit of the measurement model, making it superior to other fit measures.</p>
+ 
+<p>You can calculate RMSEA-P by simply entering the values for your model on the left.  Default values for one example are already provided, you should overwrite them with your own model values.  Your RMSEA-P and 90% C.I. values will be displayed on the right side. The calculator will automatically update with your RMSEA-P and C.I. values.  There is no need for a "submit" button.</p> 
+
+<p>You should use good judgment regarding the number of decimal places to use and report.</p>
+
+<p>You will receive a NaN error value for RMSEA-P and C.I. values unless you enter correct and positive numerical values from your model.</p> 
+
+<p>For reference, please see: O'Boyle, E., & Williams, L. (2011). Decomposing Model Fit: Measurement vs. Theory in Organizational Research Using Latent Variables.  Journal of Applied Psychology, 96(1), 1-12.</p>  
+
+<p>This app was created in partial fulfilment of the course requirements for the Coursera "Developing Data Products" course, taught by Roger Peng, Jeff Leek, and Brian Caffo of the Biostatistics department at Johns Hopkins University.</p>
+
+<p>The code for this Shiny app is on Github: <a href="https://github.com/fgoeddeke/rmseap">https://github.com/fgoeddeke/rmseap</a></p>
+
+<p>The author of this app is Frank Goeddeke of the Institute of Finance and Economics, Ulaanbaatar, Mongolia.  fgoeddeke at gmail dot com.</p>
