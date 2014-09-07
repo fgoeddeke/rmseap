@@ -1,17 +1,23 @@
 <h4>RMSEA-P Calculator</h4>
 
-<p>RMSEA-P is a measure of model fit in structural equations modeling that isolates the fit of the latent variables from the fit of the measurement model, making it superior to other fit measures.</p>
+<p>RMSEA-Path (RMSEA-P) is a measure of model fit in structural equations modeling that isolates the fit of the latent variables from the fit of the measurement model, making it a measure of RMSEA of the latent variables.</p>
  
 <p>You can calculate RMSEA-P by simply entering the values for your model on the left.  Default values for one example are already provided, you should overwrite them with your own model values.  Your RMSEA-P and 90% C.I. values will be displayed on the right side. The calculator will automatically update with your RMSEA-P and C.I. values.  There is no need for a "submit" button.</p> 
 
-<p>You should use good judgment regarding the number of decimal places to use and report.</p>
+<p>You should use good judgment regarding the number of decimal places to use and report.  All of the decimal places were included in the calculator display so the user can see that the numbers do change when making small input changes.</p>
 
-<p>You will receive a NaN error value for RMSEA-P and C.I. values unless you enter correct and positive numerical values from your model.</p> 
+<p> The formula for RMSEA-P is RMSEA-P = sqrt(((chistr-chimeas)-(dfstr-dfmeas))/((dfstr-dfmeas)*(n-1))).  The formulas for the confidence intervals are more complex and can be seen in the source code (Github link below).<p/>
+
+<p>You may receive a "NaN" (not a number) error value for RMSEA-P and C.I. values if you incorrectly enter data.  A NaN will also occur of the numerator is negative (a negative square root results in NaN error) for correctly entered values.  By convention, these NaN values are changed to 0.  This calculator changes NaN values to zero for RMSEA-P or the lower confidence interval value as long as the upper confidence interval value is greater than zero.  If the upper confidence interval value is NaN, you should double check to make sure you entered data correctly.</p> 
+
+<p> You may also receive a "Inf" (division by 0) error if you entered an n of 1, or if the degrees of freedom in the measurement model is the equal to the degrees of freedom in the structural model.  You should double check to make sure you entered data correctly.<p/>
 
 <p>For reference, please see: O'Boyle, E., & Williams, L. (2011). Decomposing Model Fit: Measurement vs. Theory in Organizational Research Using Latent Variables.  Journal of Applied Psychology, 96(1), 1-12.</p>  
 
-<p>This app was created in partial fulfilment of the course requirements for the Coursera "Developing Data Products" course, taught by Roger Peng, Jeff Leek, and Brian Caffo of the Biostatistics department at Johns Hopkins University.</p>
+<p>This app was originally created in partial fulfilment of the course requirements for the Coursera "Developing Data Products" course, taught by Roger Peng, Jeff Leek, and Brian Caffo of the Biostatistics department at Johns Hopkins University.  It has been updated since.</p>
 
-<p>The code for this Shiny app is on Github: <a href="https://github.com/fgoeddeke/rmseap">https://github.com/fgoeddeke/rmseap</a></p>
+<p>The code for this Shiny app is on Github: <a href="https://github.com/fgoeddeke/rmseap">https://github.com/fgoeddeke/rmseap</a>  The basic code for the formulas are in the rmseap.R file.  This code is based on the O'Boyle and Williams (2011) paper and an excel spreadsheet O'Boyle posted on ResearchGate to calculate RMSEA-P <a href="https://www.researchgate.net/publication/265167230_O%27Boyle__Williams_RMSEA-P_CI_calculator?ev=prf_pub">O'Boyle & Williams RMSEA-P CI calculator</a></p>
 
-<p>The author of this app is Frank Goeddeke of the Institute of Finance and Economics, Ulaanbaatar, Mongolia.  fgoeddeke at gmail dot com.</p>
+<p> This online calculator app differs from the O'Boyle excel spreadsheet in that his spreadsheet rounds the critical z value to three decimal places (1.645) while this app retains all decimal places used in R.  Additionally, this online claculator changes the NaN values to zero for RMSEA-P and the lower confidence interval values as long as the upper confidence interval value is greater than zero.</p>
+
+<p>The author of this app is Frank Goeddeke of the Institute of Finance and Economics, Ulaanbaatar, Mongolia.  All comments, suggestions, and criticisms are welcome.  fgoeddeke at gmail dot com.  Last update September 2014.</p>

@@ -18,6 +18,8 @@ rmsea <- function(n, dfstr, dfmeas, chistr, chimeas){
   lupper <- xupper - (dfstr - dfmeas)
   rmseapl <<- sqrt(llower/((dfstr-dfmeas)*(n-1)))
   rmseapu <<- sqrt(lupper/((dfstr-dfmeas)*(n-1)))
+  if ((is.nan(rmseap)) & (rmseapu > 0)) rmseap <<- 0
+  if ((is.nan(rmseapl)) & (rmseapu > 0)) rmseapl <<- 0
  }
 
 
